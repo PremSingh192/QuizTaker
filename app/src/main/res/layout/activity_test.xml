@@ -1,0 +1,134 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/peach"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:fillViewport="true">
+
+        <!-- Wrapping multiple views inside a LinearLayout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="4dp"
+                app:srcCompat="@drawable/arrow"
+                app:tint="@color/black"  />
+
+            <!-- Add more views here as needed -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addimage"
+                style="@style/cardViewStyle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300px"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/categoryHeadingTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="capture image" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <ImageView
+                android:id="@+id/imageViewCaptured"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/addimage"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Get_Coordinates"
+                style="@style/cardViewStyle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300px"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/categoryHeadingTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Get Coordinates" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/coordinateX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coordinates will appear here"
+                android:layout_marginTop="16dp" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/OpenMap"
+                style="@style/cardViewStyle"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="300px"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/categoryHeadingTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Open In maps" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.prem.quiztaker.MyCustomView
+                    android:id="@+id/myCustomView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>
